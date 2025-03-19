@@ -41,9 +41,11 @@ const deleteFromCloudinary = async (cloudinaryFilePath) => {
             console.log("File Deletion Failed")
 
         console.log("File Deleted successfully from cloudinary");
+        return deleteResponse;
 
     } catch (error) {
         console.log("File Deletion Failed :",error);
+        return null;
     }
 
 }
