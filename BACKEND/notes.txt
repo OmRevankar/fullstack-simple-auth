@@ -1,0 +1,11 @@
+NODEMAILER
+
+1.npm i nodemailer
+2.copy paste code in a helper folder in sendMail.js
+3.Go to gmail 
+    => 2 step verfication
+    => App password
+    => create new app under nodejs
+    => copy and use the password by removing spaces
+4.Edit the code     
+5.use the sendMail function                 

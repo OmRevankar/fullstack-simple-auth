@@ -37,12 +37,13 @@ const userSchema = new Schema(
     }
     ,{timestamps:true});
 
-userSchema.pre("save",async(next)=>{
-
-    if (!this.isModified("password")) {return next()}
-
-    this.password = await bcrypt.hash(this.password,10);
-    next();
+// Change this arrow function to a regular function
+userSchema.pre('save', function(next) {  // Changed from arrow function
+  if (!this.isModified('password')) return next();
+  
+  // Hash password if modified
+  this.password = bcrypt.hashSync(this.password, 10);
+  next();
 });
 
 userSchema.methods.generateRefreshToken = function(){

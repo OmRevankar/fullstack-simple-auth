@@ -17,6 +17,16 @@ class ApiError extends Error{
         }
     }
 
+    toJSON() {
+        return {
+            statusCode: this.statusCode,
+            data: this.data,
+            success: this.success,
+            errors: this.errors,
+            message: this.message // Ensure message is included in JSON response
+        };
+    }
+
 }
 
 export {ApiError}
